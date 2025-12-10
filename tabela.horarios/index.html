@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadro de Horários do Professor</title>
+    <link rel="stylesheet" href="style_horarios.css">
+</head>
+<body>
+
+    <h1>Meu Quadro de Horários Semanal</h1>
+
+    <table id="quadro-horarios">
+        <thead>
+            <tr>
+                <th>Horário</th>
+                <th>Segunda</th>
+                <th>Terça</th>
+                <th>Quarta</th>
+                <th>Quinta</th>
+                <th>Sexta</th>
+                <th>Sábado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-intervalo="07h30-09h30">
+                <td>07h30–09h30</td>
+                <td data-dia="Segunda"></td>
+                <td data-dia="Terça"></td>
+                <td data-dia="Quarta"></td>
+                <td data-dia="Quinta"></td>
+                <td data-dia="Sexta"></td>
+                <td data-dia="Sábado"></td>
+            </tr>
+
+            <tr data-intervalo="10h00-12h00">
+                <td>10h00–12h00</td>
+                <td data-dia="Segunda"></td>
+                <td data-dia="Terça"></td>
+                <td data-dia="Quarta"></td>
+                <td data-dia="Quinta"></td>
+                <td data-dia="Sexta"></td>
+                <td data-dia="Sábado"></td>
+            </tr>
+
+            <tr data-intervalo="13h30-15h30">
+                <td>13h30–15h30</td>
+                <td data-dia="Segunda"></td>
+                <td data-dia="Terça"></td>
+                <td data-dia="Quarta"></td>
+                <td data-dia="Quinta"></td>
+                <td data-dia="Sexta"></td>
+                <td data-dia="Sábado"></td>
+            </tr>
+            
+            </tbody>
+    </table>
+
+    <script src="horario_prof.js"></script>
+    
+    <script>
+        fetch('horarios.csv')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(Erro ao buscar o CSV: ${response.statusText});
+                }
+                return response.text();
+            })
+            .then(csvText => {
+                // Função definida em horario_prof.js
+                montarQuadroHorarios(csvText); 
+            })
+            .catch(error => {
+                console.error('Problema com a operação fetch:', error);
+                document.getElementById('quadro-horarios').innerHTML = '<tr><td colspan="7">Erro ao carregar os horários. Verifique o console.</td></tr>';
+            });
+    </script>
+
+</body>
+</html>

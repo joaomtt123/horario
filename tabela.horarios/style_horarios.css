@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#quadro-horarios {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#quadro-horarios th, 
+#quadro-horarios td {
+    border: 1px solid #ddd;
+    padding: 12px 8px; /* Mais espaço vertical */
+    text-align: center;
+    min-width: 100px; /* Garante largura mínima para visualização em desktop */
+}
+
+#quadro-horarios th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Estilo para a coluna de Horário (primeira célula) */
+#quadro-horarios tr td:first-child {
+    background-color: #e9ecef;
+    font-weight: bold;
+    color: #495057;
+}
+
+/* Estilo para células preenchidas (aquelas com conteúdo de aula) */
+#quadro-horarios td:not(:empty) {
+    background-color: #d4edda; /* Verde claro para aulas */
+    font-weight: 500;
+    color: #155724;
+}
+
+#quadro-horarios td small {
+    display: block; /* Garante que a turma fique em uma nova linha */
+    font-size: 0.9em;
+    color: #387040;
+    margin-top: 2px;
+}
