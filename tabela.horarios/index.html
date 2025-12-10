@@ -53,9 +53,8 @@
     </table>
 
     <script src="horarios_prof.js"></script>
-    
-    <script src="horarios.csv"></script>
-        fetch('horarios.csv')
+
+        fetch('horarios.CSV')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(Erro ao buscar o CSV: ${response.statusText});
@@ -71,6 +70,8 @@
                 document.getElementById('quadro-horarios').innerHTML = '<tr><td colspan="7">Erro ao carregar os horários. Verifique o console.</td></tr>';
             });
     </script>
+
+    <script src="horarios.csv"></script>
 
 </body>
 </html>
