@@ -49,28 +49,9 @@
                 <td data-dia="Sexta"></td>
             </tr>
             
+                     </tr>
             </tbody>
-    </table>
-
-    <script src="horarios_profs.js"></script>
-
-          <script>
-        fetch('horarios.csv')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(Erro ao buscar CSV: ${response.statusText});
-                }
-                return response.text();
-            })
-            .then(csvText => {
-                // Função definida em horario_prof.js
-                montarQuadroHorarios(csvText); 
-            })
-            .catch(error => {
-                console.error('Problema com a operação fetch:', error);
-                document.getElementById('quadro-horarios').innerHTML = '<tr><td colspan="7">Erro ao carregar os horários. Verifique o console.</td></tr>';
-            });
-    </script>
-
-</body>
+        </table>
+        <script src="../scripts/horario_prof.js"></script>
+    </body>
 </html>
