@@ -32,7 +32,7 @@
             </tr>
 
             <tr data-intervalo="16h00-18h00">
-                <td>16h00_18h00</td>
+                <td>16h00-18h00</td>
                 <td data-dia="Segunda"></td>
                 <td data-dia="Terça"></td>
                 <td data-dia="Quarta"></td>
@@ -52,9 +52,9 @@
             </tbody>
     </table>
 
-    <script src="horario_prof.js"></script>
+    <script src="horarios_prof.js"></script>
     
-    <script>
+    <script src="horarios.csv"></script>
         fetch('horarios.csv')
             .then(response => {
                 if (!response.ok) {
